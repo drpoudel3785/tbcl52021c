@@ -1,3 +1,3 @@
-<div class="row">
-          <div class="col-xl-12">Footer</div>
+<div class="row"  >
+          <div class="col-xl-12" id="footer">Footer</div>
        </div>

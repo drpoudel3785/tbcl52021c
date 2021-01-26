@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Site Layout</title>
-    <?php include('headpart.php');?>
+       <title>Download </title>
+       <?php include('headpart.php');?>
 </head>
 <body>
     <div class="container">
@@ -20,7 +21,17 @@
 
        <div class="row">
           <div class="col-xl-3"><?php include('sidebar.php');?> </div>
-          <div class="col-xl-9">Main Content</div>
+          <div class="col-xl-9">
+            <h1>Download</h1>
+              <ul>
+              <li><a href="#">Link1<li>
+              <li><a href="#">Link1<li>
+              <li><a href="#">Link1<li>
+              <li><a href="#">Link1<li>
+              <li><a href="#">Link1<li>
+              </ul>
+          
+          </div>
        </div>
 
 
