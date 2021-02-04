@@ -26,7 +26,7 @@ echo $message;
   echo @$subject;
 
   //destroying the variable by using unset() function
-  unset($name);
+  unset($name, $Subject);
   echo @$name;
 
   $a=5;
