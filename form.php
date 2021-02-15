@@ -21,8 +21,11 @@
  {
    $uname = $_POST['username'];
    $pass = $_POST['password'];
+   echo filter_var ($uname, FILTER_SANITIZE_STRING);
+
    if(empty($uname) && empty($pass))
    {
+      
        echo "Please fill the Username and password";
    }
    else if(empty($pass))
@@ -34,8 +37,16 @@
        echo "Please fillUsername";
    }
    else{
-    echo "The User name is $uname and Password is" .$pass;
+       if(filter_var($uname, FILTER_VALIDATE_EMAIL))
+       {
+        echo "The User name is $uname and Password is" .$pass;
+       }
+       else
+       {
+           echo "The Username is not in Email Format";
+       }
    }
+
 }
 ?>  
 </body>

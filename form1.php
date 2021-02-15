@@ -15,6 +15,8 @@
   if(isset($_POST['submit']))
  {
    $pr = $_POST['price'];
+
+  if(filter_var($pr, FILTER_VALIDATE_INT)) {
    echo "<table border=1>
           <tr>
              <td> Quantity</td>
@@ -25,6 +27,11 @@
                  echo "<tr><td> $i </td><td>". $i*$pr."</td></tr>";
              }
              echo "</table>";
+            }
+            else
+            {
+                echo "Pls Enter the valid Number";
+            }
 }
 ?>  
 </body>
