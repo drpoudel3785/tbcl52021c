@@ -10,6 +10,7 @@ $sql = "INSERT INTO users(username, password, email, role, status) VALUES ('$una
 include('connection.php');
 //mysqli_query()
 $qry = mysqli_query($conn, $sql);
+
 if($qry)
 {
     echo "User Inserted Successfully";
