@@ -7,7 +7,14 @@
     <title>All USers</title>
 </head>
 <body>
+<a href="register.php">Add User</a>
+<br/>
+
   <?php
+    if(isset($_GET['msg']))
+    {
+        echo "<h4>".$_GET['msg']."</h4>";
+    }
      $sql = "SELECT * FROM users";
     include('connection.php');
     $qry =  mysqli_query($conn, $sql);
@@ -19,7 +26,7 @@
        echo "<table border=1>
           <tr>
           <th>ID</th>   <th>Username</th>    <th>password</th>  <th>Email</th>
-          <th>Role</th>  <th>Status</th>   </tr>   ";
+          <th>Role</th>  <th>Status</th>  <th>Action</th>  </tr>   ";
          //printing all records form the the table
           //mysqli_fetch_array() or mysqli_fetch_assoc()
           while($row = mysqli_fetch_assoc($qry))
@@ -31,6 +38,10 @@
               echo "<td>".$row['email']."</td>";
               echo "<td>".$row['role']."</td>";
               echo "<td>".$row['status']."</td>";
+              echo "<td>
+              <a href=edituser.php?id=".$row['id'].">EDIT </a> |
+              <a href=deleteuser.php?id=".$row['id'].">DELETE </a> 
+              </td>";
               echo "</tr>";
           }
           echo "</table>";

@@ -15,7 +15,7 @@ $qry = mysqli_query($conn, $sql);
 
 if($qry)
 {
-    echo "User Inserted Successfully";
+   header("Location: getallusers.php?msg=User $uname Inserted Successfully");
 }
 else{
     echo "Oops! Something Error";
