@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION['username']))
+{
+    header('Location: login.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +15,10 @@
     <title>All USers</title>
 </head>
 <body>
+<p style="align:right;">Welcome, <?php echo $_SESSION['username']; ?>
+<a href="logout.php"/>Logout</a>
+<p>
+<hr/>
 <a href="register.php">Add User</a>
 <br/>
 
@@ -20,7 +32,7 @@
     $qry =  mysqli_query($conn, $sql);
    // var_dump($qry);
    $count = mysqli_num_rows($qry);
-   echo "Thre are ".$count. " records.";
+   echo "There are ".$count. " records.";
    if($count>=1)
    {
        echo "<table border=1>

@@ -1,4 +1,7 @@
 <?php
+// Start the session
+session_start();
+
 //checking the form is submitted or not
   if(isset($_POST['submit']))
   {
@@ -17,7 +20,11 @@
           //Counting the number or rows
           $count = mysqli_num_rows($qry);
           if($count==1)
-          {  echo "Login Success";  }
+          {  
+            $_SESSION['username'] = $name;
+            
+            header("Location: getallusers.php"); 
+          }
           else { echo "Login Failed"; }
       }
       else{  echo "Pls fill all the fields";   }
